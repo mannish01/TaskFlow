@@ -14,7 +14,7 @@ WORKDIR /app
 ENV NODE_ENV=production
 COPY server/package*.json ./server/
 RUN cd server && npm ci --omit=dev
-COPY server/dist ./server/dist
-COPY client/dist ./client/dist
+COPY --from=build /app/server/dist ./server/dist
+COPY --from=build /app/client/dist ./client/dist
 EXPOSE 5000
 CMD ["node", "server/dist/server.js"]
