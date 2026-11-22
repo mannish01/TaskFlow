@@ -14,40 +14,49 @@ const statusLabel: Record<Task['status'], string> = {
 
 export function TaskItem({ task, onToggle, onDelete }: TaskItemProps) {
   const nextStatus = task.status === 'done' ? 'todo' : 'done';
+  const done = task.status === 'done';
 
   return (
-    <li className="flex flex-col gap-3 rounded-xl border border-white/10 bg-white/5 p-4 sm:flex-row sm:items-center sm:justify-between">
-      <div className="min-w-0">
-        <div className="flex items-center gap-2">
-          <h3
-            className={`truncate font-semibold ${task.status === 'done' ? 'text-slate-500 line-through' : 'text-white'}`}
-          >
-            {task.title}
-          </h3>
-          <span className="rounded-full bg-white/10 px-2 py-0.5 text-[11px] text-slate-300">
-            {statusLabel[task.status]}
-          </span>
+    <li className="flex flex-col gap-4 border-b-2 border-ink py-5 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex min-w-0 items-start gap-4">
+        <span
+          aria-hidden="true"
+          className={`mt-1 text-2xl font-bold leading-none ${done ? 'text-ink' : 'text-ink/25'}`}
+        >
+          {done ? '[x]' : '[ ]'}
+        </span>
+        <div className="min-w-0">
+          <div className="flex flex-wrap items-center gap-3">
+            <h3
+              className={`truncate text-base font-bold uppercase tracking-tight ${done ? 'text-ink/40 line-through decoration-2' : 'text-ink'}`}
+            >
+              {task.title}
+            </h3>
+            <span className={`tag ${done ? 'bg-acid' : 'bg-transparent'}`}>
+              {statusLabel[task.status]}
+            </span>
+          </div>
+          {task.description && (
+            <p className="mt-2 text-xs uppercase tracking-wide text-ink/55">{task.description}</p>
+          )}
+          {task.dueDate && (
+            <p className="mt-1 text-[10px] font-bold uppercase tracking-widest text-ink/45">
+              Due :: {new Date(task.dueDate).toLocaleDateString()}
+            </p>
+          )}
         </div>
-        {task.description && (
-          <p className="mt-1 text-sm text-slate-400">{task.description}</p>
-        )}
-        {task.dueDate && (
-          <p className="mt-1 text-xs text-slate-500">
-            Due {new Date(task.dueDate).toLocaleDateString()}
-          </p>
-        )}
       </div>
       <div className="flex shrink-0 gap-2">
         <button
           type="button"
-          className="btn-ghost"
+          className="btn-term-ghost"
           onClick={() => onToggle({ ...task, status: nextStatus })}
         >
-          {task.status === 'done' ? 'Reopen' : 'Complete'}
+          {done ? 'Reopen' : 'Complete'}
         </button>
         <button
           type="button"
-          className="btn-ghost text-rose-300 hover:bg-rose-500/10"
+          className="btn-term-ghost border-rust text-rust hover:bg-rust hover:text-paper"
           onClick={() => onDelete(task.id)}
         >
           Delete

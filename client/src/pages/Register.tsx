@@ -25,43 +25,61 @@ export function Register() {
     }
   };
 
+  const fields = [
+    { label: 'Operator name', value: name, set: setName, type: 'text', placeholder: 'Manish' },
+    { label: 'Email / identifier', value: email, set: setEmail, type: 'email', placeholder: 'you@example.com' },
+    { label: 'Password / key', value: password, set: setPassword, type: 'password', placeholder: '8+ characters' },
+  ];
+
   return (
-    <main className="grid min-h-screen place-items-center px-4">
-      <form onSubmit={onSubmit} className="card w-full max-w-md space-y-5">
-        <div>
-          <h1 className="text-2xl font-bold">Create your account</h1>
-          <p className="mt-1 text-sm text-slate-400">Start with one small task.</p>
-        </div>
-        {[
-          { label: 'Name', value: name, set: setName, type: 'text', placeholder: 'Manish' },
-          { label: 'Email', value: email, set: setEmail, type: 'email', placeholder: 'you@example.com' },
-          { label: 'Password', value: password, set: setPassword, type: 'password', placeholder: 'At least 8 characters' },
-        ].map((field) => (
-          <label className="block" key={field.label}>
-            <span className="mb-1 block text-xs uppercase tracking-wide text-slate-400">{field.label}</span>
-            <input
-              className="input"
-              type={field.type}
-              value={field.value}
-              onChange={(e) => field.set(e.target.value)}
-              placeholder={field.placeholder}
-              required
-              minLength={field.type === 'password' ? 8 : undefined}
-            />
-          </label>
-        ))}
-        {error && (
-          <p role="alert" className="rounded-lg bg-rose-500/10 px-3 py-2 text-sm text-rose-300">
-            {error}
+    <main className="min-h-screen">
+      <div className="term-bar">
+        <span>TaskFlow :: new_operator</span>
+        <span className="text-acid">● ready</span>
+      </div>
+      <div className="mx-auto grid min-h-[calc(100vh-37px)] max-w-6xl gap-10 px-5 py-12 lg:grid-cols-2 lg:items-center lg:gap-20">
+        <section>
+          <p className="term-label">[ 00 / ENLIST ]</p>
+          <h1 className="mt-5 text-6xl font-bold uppercase leading-[0.85] tracking-tighter sm:text-8xl">
+            JOIN<span className="text-acid">_</span>QUEUE
+          </h1>
+          <p className="mt-8 max-w-md border-l-4 border-acid pl-4 text-sm uppercase leading-relaxed tracking-wide text-ink/70">
+            Create an identity. Claim a task. Ship it. The system remembers the rest.
           </p>
-        )}
-        <button className="btn-primary w-full" disabled={busy} type="submit">
-          {busy ? 'Creating…' : 'Create account'}
-        </button>
-        <p className="text-center text-sm text-slate-400">
-          Already have an account? <Link className="text-violet-300 hover:underline" to="/login">Sign in</Link>
-        </p>
-      </form>
+        </section>
+
+        <form onSubmit={onSubmit} className="term-panel w-full p-6 sm:p-9">
+          <div className="mb-8 flex items-center justify-between border-b-2 border-ink pb-3">
+            <h2 className="text-lg font-bold uppercase tracking-tight">Create identity</h2>
+            <span className="term-label">id :: new</span>
+          </div>
+          {fields.map((field) => (
+            <label className="mt-5 block first:mt-0" key={field.label}>
+              <span className="term-label">{field.label}</span>
+              <input
+                className="input-term"
+                type={field.type}
+                value={field.value}
+                onChange={(e) => field.set(e.target.value)}
+                placeholder={field.placeholder}
+                required
+                minLength={field.type === 'password' ? 8 : undefined}
+              />
+            </label>
+          ))}
+          {error && (
+            <p role="alert" className="mt-6 border-2 border-rust bg-rust/10 px-3 py-2 text-xs font-bold uppercase tracking-wide text-rust">
+              ! {error}
+            </p>
+          )}
+          <button className="btn-term mt-8 w-full" disabled={busy} type="submit">
+            {busy ? 'Writing…' : 'Create →'}
+          </button>
+          <p className="mt-6 text-xs uppercase tracking-wide text-ink/60">
+            Already enlisted? <Link className="font-bold underline decoration-acid decoration-2 underline-offset-4" to="/login">Sign in</Link>
+          </p>
+        </form>
+      </div>
     </main>
   );
 }

@@ -4,9 +4,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: '#0f172a',
-        panel: '#111827',
-        accent: '#7c3aed',
+        paper: '#F1EDE3',
+        ink: '#0B0B0A',
+        acid: '#C8FF2E',
+        rust: '#FF4D2E',
+      },
+      fontFamily: {
+        mono: ['"JetBrains Mono"', '"IBM Plex Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
     },
   },

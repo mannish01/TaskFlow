@@ -2,6 +2,8 @@
 
 A focused MERN + TypeScript task manager built as the first real full-stack portfolio project. It proves the whole request path: React form → REST API → Zod validation → MongoDB → JWT httpOnly cookie → protected routes → tests → CI → deployment config.
 
+The UI is a deliberately opinionated **brutalist terminal**: warm paper, hard black rules, monospace type, offset shadows, and one acid-lime accent. No gradients, rounded SaaS cards, or purple default styling.
+
 ## Why this project exists
 
 Generic "to-do apps" are weak portfolio pieces. TaskFlow is deliberately narrow but production-shaped: per-user data isolation, httpOnly-cookie auth, one consistent error envelope, server-side validation, pagination, filters, tests for the ownership boundary, and a CI pipeline. No AI, payments, WebSockets or second database.
@@ -111,7 +113,7 @@ The API tests use `mongodb-memory-server`, so no external database is needed. On
 | Empty dashboard | `docs/screenshots/02-tasks-empty.png` |
 | Filled dashboard with filters and completed task | `docs/screenshots/03-tasks-filled.png` |
 
-These are real screenshots from a local run, not mockups.
+These are real screenshots from a local run, not mockups. The redesign moved the app from a generic dark-purple dashboard to a cream/black/acid-lime terminal aesthetic with a two-column queue layout.
 
 ## What broke and how I fixed it
 

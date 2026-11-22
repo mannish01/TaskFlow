@@ -1,9 +1,9 @@
 # Screenshots
 
-Add the following images here before publishing the repository as a portfolio piece:
+Real screenshots from a local run of the brutalist terminal UI:
 
-- `01-login.png` — sign-in screen with inline error state
-- `02-tasks-empty.png` — empty dashboard after registration
-- `03-tasks-filled.png` — dashboard with todo, in-progress and done tasks
+- `01-login.png` — sign-in screen with the split manifesto/form layout
+- `02-tasks-empty.png` — empty queue after registration
+- `03-tasks-filled.png` — queue with one done task and two todo tasks
 
-They are intentionally not committed yet; placeholders would be worse than honest documentation.
+These images are committed with the repository, not placeholders.
