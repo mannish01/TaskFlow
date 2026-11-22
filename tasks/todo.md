@@ -8,4 +8,4 @@
 - [x] Task 5: Client UI with auth and task dashboard + UI test
 - [x] Task 6: README, architecture diagram, API table, screenshots, write-up
 - [x] Checkpoint: build and full test suite pass
-- [ ] Push to GitHub
+- [x] Push to GitHub
