@@ -1,0 +1,22 @@
+{
+  "name": "taskflow",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A focused MERN + TypeScript task manager with JWT httpOnly-cookie auth",
+  "scripts": {
+    "dev": "concurrently -n SERVER,CLIENT -c magenta,cyan \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "npm run --prefix server dev",
+    "dev:client": "npm run --prefix client dev",
+    "build": "npm run build:server && npm run build:client",
+    "build:server": "npm run --prefix server build",
+    "build:client": "npm run --prefix client build",
+    "start": "npm run --prefix server start",
+    "test": "npm run test:server && npm run test:client",
+    "test:server": "npm run --prefix server test",
+    "test:client": "npm run --prefix client test",
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
