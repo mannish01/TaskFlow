@@ -5,6 +5,7 @@
 <p><b>A MERN + TypeScript task manager built like a production system, styled like a terminal.</b></p>
 
 <p>
+  <a href="https://taskflow-lac5.onrender.com"><img src="https://img.shields.io/badge/🚀_LIVE_DEMO-taskflow--lac5.onrender.com-C8FF2E?style=for-the-badge&logo=render" alt="Live demo" /></a>
   <a href="https://github.com/mannish01/TaskFlow/actions/workflows/ci.yml"><img src="https://github.com/mannish01/TaskFlow/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
   <img src="https://img.shields.io/badge/Tests-10%20passing-C8FF2E?style=for-the-badge&logo=vitest" alt="10 tests passing" />
   <img src="https://img.shields.io/badge/License-MIT-C8FF2E?style=for-the-badge" alt="MIT license" />
@@ -18,6 +19,8 @@
   <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
   <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
 </p>
+
+<p><b>Live:</b> <a href="https://taskflow-lac5.onrender.com">https://taskflow-lac5.onrender.com</a></p>
 
 <p><a href="#-screenshots">Screenshots</a> • <a href="#-architecture">Architecture</a> • <a href="#-api-reference">API</a> • <a href="#-quick-start">Quick start</a> • <a href="#-engineering-journal">Engineering journal</a></p>
 
